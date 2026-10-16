@@ -395,6 +395,11 @@ export const CONFIG: SiteConfig = {
       after: "/images/before-after/after-1.webp",
       alt: "Piso post construcción — antes y después del pulido",
     },
+    {
+      before: "/images/before-after/before-2.webp",
+      after: "/images/before-after/after-2.webp",
+      alt: "Baño — antes y después de la limpieza profunda",
+    },
   ],
   reviews: [
     { name: "Erica Fernandez", source: "Facebook" },

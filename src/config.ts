@@ -467,7 +467,7 @@ export const CONFIG: SiteConfig = {
     galleryEyebrow: "Galería",
     galleryTitle: "Resultados que se notan",
     gallerySubtitle:
-      "Mira nuestros trabajos en movimiento. Desliza, acelera con las flechas o toca una foto para verla completa.",
+      "Mira nuestros trabajos en movimiento. Arrastra con el dedo o el mouse, o toca una foto para verla completa.",
     beforeAfterTitle: "Antes / Después",
     beforeAfterSubtitle: "Arrastra el control para comparar.",
     coverageEyebrow: "Cobertura",

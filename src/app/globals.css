@@ -126,6 +126,17 @@ body {
   animation: marquee 38s linear infinite;
 }
 
+/* Gallery drag strip — prefer horizontal finger gestures */
+.gallery-drag {
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.gallery-drag:active {
+  cursor: grabbing;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);

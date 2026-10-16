@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { CONFIG } from "@/config";
 import { BeforeAfter } from "@/components/BeforeAfter";
-import { Img } from "@/components/Img";
+import { GalleryAutoScroll } from "@/components/GalleryAutoScroll";
 import { Lightbox } from "@/components/Lightbox";
-import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
+import { Reveal } from "@/components/Reveal";
 
 export function Gallery() {
   const [index, setIndex] = useState<number | null>(null);
@@ -25,30 +25,13 @@ export function Gallery() {
             {CONFIG.copy.gallerySubtitle}
           </p>
         </Reveal>
+      </div>
 
-        <Stagger className="mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3">
-          {images.map((image, i) => (
-            <StaggerItem key={image.src} className="mb-4 break-inside-avoid">
-              <button
-                type="button"
-                onClick={() => setIndex(i)}
-                className="group block w-full overflow-hidden rounded-2xl shadow-soft ring-1 ring-brand-navy/8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
-                aria-label={`Ampliar: ${image.alt}`}
-              >
-                <Img
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
-                  className="w-full transition duration-500 group-hover:scale-[1.03]"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  placeholderLabel={image.alt}
-                />
-              </button>
-            </StaggerItem>
-          ))}
-        </Stagger>
+      <Reveal className="mt-10">
+        <GalleryAutoScroll images={images} onOpen={setIndex} />
+      </Reveal>
 
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {CONFIG.beforeAfter.length > 0 && (
           <Reveal className="mt-12">
             <h3 className="font-heading text-2xl font-extrabold text-brand-navy">

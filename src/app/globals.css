@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+:root {
+  --brand-navy: #1b1a3a;
+  --brand-blue: #1e6fd9;
+  --brand-yellow: #ffd400;
+  --whatsapp: #25d366;
+  --soft-grey: #f3f5f8;
+  --background: #ffffff;
+  --foreground: #1b1a3a;
+}
+
+@theme inline {
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-whatsapp: var(--whatsapp);
+  --color-soft-grey: var(--soft-grey);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
+  --shadow-soft: 0 10px 30px rgba(27, 26, 58, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track,
+  .wa-pulse,
+  .btn-shine::after {
+    animation: none !important;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.font-heading {
+  font-family: var(--font-heading), var(--font-body), system-ui, sans-serif;
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+/* Image placeholders */
+.img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 8rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 212, 0, 0.35), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(30, 111, 217, 0.45), transparent 50%),
+    linear-gradient(135deg, #1b1a3a 0%, #1e6fd9 55%, #3a8cff 100%);
+}
+
+.img-placeholder__label {
+  max-width: 80%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  backdrop-filter: blur(4px);
+}
+
+/* Card hover lift */
+.card-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(27, 26, 58, 0.12);
+}
+
+/* Button shine sweep */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%);
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.btn-shine:hover::after {
+  animation: shine-sweep 0.7s ease;
+}
+
+@keyframes shine-sweep {
+  to {
+    transform: translateX(120%);
+  }
+}
+
+/* Marquee */
+.marquee-track {
+  animation: marquee 38s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* WhatsApp float */
+.wa-float {
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.wa-pulse {
+  animation: wa-pulse 2s ease-out infinite;
+  opacity: 0.55;
+}
+
+@keyframes wa-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+/* Coverage abstract pattern (no map pins) */
+.coverage-pattern {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(255, 212, 0, 0.18), transparent 28%),
+    radial-gradient(circle at 80% 30%, rgba(30, 111, 217, 0.35), transparent 32%),
+    radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.08), transparent 35%),
+    repeating-linear-gradient(
+      -18deg,
+      transparent,
+      transparent 18px,
+      rgba(255, 255, 255, 0.03) 18px,
+      rgba(255, 255, 255, 0.03) 19px
+    );
+}
+
+/* Anchor offset for sticky nav */
+section[id] {
+  scroll-margin-top: 5rem;
+}

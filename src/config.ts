@@ -389,7 +389,13 @@ export const CONFIG: SiteConfig = {
       height: 800,
     },
   ],
-  beforeAfter: [],
+  beforeAfter: [
+    {
+      before: "/images/before-after/before-1.webp",
+      after: "/images/before-after/after-1.webp",
+      alt: "Piso post construcción — antes y después del pulido",
+    },
+  ],
   reviews: [
     { name: "Erica Fernandez", source: "Facebook" },
     { name: "Nelson Carranza", source: "Facebook" },

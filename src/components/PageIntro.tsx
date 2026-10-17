@@ -27,9 +27,9 @@ export function PageIntro() {
           <motion.img
             src={CONFIG.images.logo}
             alt=""
-            width={120}
-            height={120}
-            className="h-24 w-24 object-contain"
+            width={160}
+            height={160}
+            className="h-28 w-28 object-contain sm:h-32 sm:w-32"
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}

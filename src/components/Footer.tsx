@@ -14,9 +14,9 @@ export function Footer() {
             <img
               src={CONFIG.images.logo}
               alt={CONFIG.businessName}
-              width={48}
-              height={48}
-              className="h-12 w-12 rounded-md object-contain"
+              width={72}
+              height={72}
+              className="h-14 w-14 object-contain sm:h-16 sm:w-16"
             />
             <div>
               <p className="font-heading text-lg font-bold">{CONFIG.businessName}</p>

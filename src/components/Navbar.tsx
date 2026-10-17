@@ -41,11 +41,11 @@ export function Navbar() {
           <img
             src={CONFIG.images.logo}
             alt={CONFIG.businessName}
-            width={44}
-            height={44}
-            className="h-10 w-10 rounded-md object-contain sm:h-11 sm:w-11"
+            width={64}
+            height={64}
+            className="h-12 w-12 object-contain drop-shadow-sm sm:h-14 sm:w-14"
           />
-          <span className="font-heading text-sm font-bold tracking-wide text-white sm:text-base">
+          <span className="font-heading hidden text-sm font-bold tracking-wide text-white sm:inline sm:text-base">
             {CONFIG.businessName}
           </span>
         </a>
